@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    outline: none;
+}
+
+*::-webkit-scrollbar{
+  display: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+  font-family: "Inter", sans-serif;
+}
+
+.light{
+  background-color: white;
+  color: black;
+}
+.dark{
+  background-color: black;
+  color: white;
+}
+
+
+.toggleBtn:hover {
+  animation: rotateImage 1s infinite;
+}
+
+@keyframes rotateImage {
+  0% {
+      transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  100% {
+      transform: rotate3d(0, 0, 1, 90deg);
+  }
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    --_c:no-repeat radial-gradient(farthest-side,#25b09b 92%,#0000);
+    background: 
+      var(--_c) top,
+      var(--_c) left,
+      var(--_c) right,
+      var(--_c) bottom;
+    background-size: 12px 12px;
+    animation: l7 1s infinite;
+  }
+  @keyframes l7 {to{transform: rotate(.5turn)}}
