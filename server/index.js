@@ -8,9 +8,6 @@ const cartRouter = require('./routes/cartRoutes')
 const app = express()
 const port = 3000
 
-
-
-
 connectDb()
 
 app.use(express.json())
@@ -22,7 +19,6 @@ app.use(cookieParser())
 
 app.use("/api/auth",authRouter)
 app.use("/api/cart",cartRouter)
-
 
 
 app.get('/', (req, res) => {
