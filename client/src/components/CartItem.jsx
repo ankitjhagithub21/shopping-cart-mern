@@ -2,6 +2,7 @@ import React from 'react'
 import toast from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
 import { decrementQuantity, incrementQuantity, removeFromCart } from '../app/slices/cartSlice'
+import { Trash } from 'lucide-react'
 
 
 const CartItem = ({ item }) => {
@@ -77,11 +78,13 @@ const CartItem = ({ item }) => {
 
 
         <div className="flex items-center gap-3 lg:p-5 p-3 my-2 rounded-lg relative  border cursor-pointer">
-            
-                <img src={item.image} alt={item.title} width={100} />
-           
+
+            <img src={item.image} alt={item.title} width={100} />
+
             <div className="flex flex-col items-start gap-3">
-                <button className='bg-red-500 text-white  px-2    py-1 rounded-lg absolute right-2 top-2' onClick={handleRemoveFromCart}>X</button>
+                <button className='bg-red-500 text-white  px-2    py-2 rounded-lg absolute right-2 top-2' onClick={handleRemoveFromCart}>
+                    <Trash size={16}/>
+                </button>
                 <h2 className="text-lg font-medium text-gray-800">
                     {item.title}
                 </h2>
@@ -91,14 +94,14 @@ const CartItem = ({ item }) => {
 
                 </div>
                 <div className='flex items-center gap-3'>
-                <button className='text-2xl px-2  bg-red-500 text-white rounded-lg' onClick={handleDecrement}>-</button>
-               
-               <span className='text-lg'>{item?.quantity}</span>
-          
-           
-               <button className='text-2xl px-2 bg-green-500 text-white rounded-lg' onClick={handleIncrement}>+</button>
+                    <button className='text-2xl px-2  bg-red-500 text-white rounded-lg' onClick={handleDecrement}>-</button>
+
+                    <span className='text-lg'>{item?.quantity}</span>
+
+
+                    <button className='text-2xl px-2 bg-green-500 text-white rounded-lg' onClick={handleIncrement}>+</button>
                 </div>
-                
+
             </div>
         </div>
 

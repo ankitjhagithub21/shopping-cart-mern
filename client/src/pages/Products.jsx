@@ -10,20 +10,40 @@ const Products = () => {
 
   const [active,setActive] = useState(0)
   const categories = [
-    "All",
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing"
-  ];
+  "beauty",
+  "fragrances",
+  "furniture",
+  "groceries",
+  "home-decoration",
+  "kitchen-accessories",
+  "laptops",
+  "mens-shirts",
+  "mens-shoes",
+  "mens-watches",
+  "mobile-accessories",
+  "motorcycle",
+  "skin-care",
+  "smartphones",
+  "sports-accessories",
+  "sunglasses",
+  "tablets",
+  "tops",
+  "vehicle",
+  "womens-bags",
+  "womens-dresses",
+  "womens-jewellery",
+  "womens-shoes",
+  "womens-watches"
+]
+
 
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${import.meta.env.VITE_PRODUCTS_URL}`);
+      const res = await fetch(`https://dummyjson.com/products`);
       const data = await res.json();
-      setProducts(data);
-      setFilteredProducts(data); 
+      setProducts(data.products);
+      setFilteredProducts(data.products); 
     } catch (error) {
       console.log(error);
     } finally {
@@ -69,7 +89,7 @@ const Products = () => {
         ))}
       </div>
         <div className="flex flex-wrap -m-4">
-          {filteredProducts.map((product) => (
+          {filteredProducts?.map((product) => (
             <Product key={product.id} product={product} />
           ))}
         </div>

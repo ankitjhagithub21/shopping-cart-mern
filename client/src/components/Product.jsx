@@ -30,7 +30,7 @@ const Product = ({product}) => {
             className={`w-full h-full object-contain object-center transition-all duration-500 ${
               isHovered ? 'scale-110' : 'scale-100'
             } ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            src={product.image}
+            src={product.thumbnail}
             onLoad={() => setImageLoaded(true)}
           />
           
