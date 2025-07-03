@@ -81,13 +81,13 @@ const CartItem = ({ item }) => {
                 <img src={item.image} alt={item.title} width={100} />
            
             <div className="flex flex-col items-start gap-3">
-                <button className='bg-red-500 text-white px-2    py-1 rounded-lg absolute right-2 top-2' onClick={handleRemoveFromCart}>X</button>
-                <h2 className="text-lg font-medium">
+                <button className='bg-red-500 text-white  px-2    py-1 rounded-lg absolute right-2 top-2' onClick={handleRemoveFromCart}>X</button>
+                <h2 className="text-lg font-medium text-gray-800">
                     {item.title}
                 </h2>
 
                 <div className='flex justify-between  items-center  gap-5 '>
-                    <p className='text-lg font-semibold'>$ {item.price * item.quantity}</p>
+                    <p className='text-lg font-semibold text-gray-800'>$ {item.price * item.quantity}</p>
 
                 </div>
                 <div className='flex items-center gap-3'>
