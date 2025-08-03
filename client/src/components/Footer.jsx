@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white pt-10 pb-6 mt-20">
+    <footer className="pt-10 border-t py-6 mt-20">
       <div className="container mx-auto px-5 grid md:grid-cols-4 sm:grid-cols-2 gap-8 text-sm">
         {/* About */}
         <div>
@@ -37,7 +37,7 @@ const Footer = () => {
         {/* Developer */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Developer</h3>
-          <p>Developed By <a className="underline text-blue-400" target="_blank">Ankit Pandey</a></p>
+          <p>Developed By <a href="https://ankitjha.vercel.app" className="underline text-blue-400" target="_blank">Ankit Jha</a></p>
           <p className="mt-2 text-sm text-gray-400">© {new Date().getFullYear()} All Rights Reserved.</p>
         </div>
       </div>
