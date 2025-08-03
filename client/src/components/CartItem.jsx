@@ -86,12 +86,12 @@ const CartItem = ({ item }) => {
                 <button className='bg-red-500 text-white  px-2    py-2 rounded-lg absolute right-2 top-2' onClick={handleRemoveFromCart}>
                     <Trash size={16}/>
                 </button>
-                <h2 className="text-lg font-medium text-gray-800">
+                <h2 className="text-lg font-medium ">
                     {item.title}
                 </h2>
 
                 <div className='flex justify-between  items-center  gap-5 '>
-                    <p className='text-lg font-semibold text-gray-800'>$ {item.price * item.quantity}</p>
+                    <p className='text-lg font-semibold'>$ {item.price * item.quantity}</p>
 
                 </div>
                 <div className='flex items-center gap-3'>
