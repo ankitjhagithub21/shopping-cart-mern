@@ -73,6 +73,7 @@ const CartItem = ({ item }) => {
             console.log(error)
         }
     }
+    console.log(item)
 
     return (
 

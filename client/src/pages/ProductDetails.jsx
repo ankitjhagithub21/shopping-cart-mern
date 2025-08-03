@@ -38,6 +38,16 @@ const ProductDetails = () => {
         if (!user) {
             return toast.error("You are not logged in.")
         }
+
+        const payload = {
+            id: product.id, 
+            title: product.title, 
+            description: product.description, 
+            image: product.thumbnail, 
+            price: product.price, 
+            category: product.category
+        }
+        
         try {
             const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/cart/add`, {
                 method: "POST",
@@ -45,9 +55,10 @@ const ProductDetails = () => {
                     "Content-Type": "application/json"
                 },
                 credentials: 'include',
-                body: JSON.stringify(product)
+                body: JSON.stringify(payload)
             })
             const data = await res.json()
+
             if (data.success) {
                 toast.success(data.message)
                 dispatch(addToCart({
@@ -152,7 +163,7 @@ const ProductDetails = () => {
 
                                     {/* Thumbnail Images */}
                                     <div className="flex space-x-4 justify-center">
-                                        {product.images.map((url,index) => (
+                                        {product.images.map((url, index) => (
                                             <div
                                                 key={index}
                                                 className={`w-20 h-20 rounded-xl overflow-hidden cursor-pointer transition-all duration-200 ${selectedImage === index ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-md'
@@ -247,8 +258,8 @@ const ProductDetails = () => {
                                         <div className="flex space-x-4">
                                             <button
                                                 className={`flex-1 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 shadow-lg hover:shadow-xl ${isLoading
-                                                        ? 'bg-gray-400 cursor-not-allowed'
-                                                        : 'bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700'
+                                                    ? 'bg-gray-400 cursor-not-allowed'
+                                                    : 'bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700'
                                                     }`}
                                                 onClick={handleAddToCart}
                                                 disabled={isLoading}

@@ -38,8 +38,8 @@ const Cart = () => {
   
   if (!user) {
     return (
-      <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100'>
-        <div className='bg-white p-8 rounded-2xl shadow-xl text-center max-w-md mx-4'>
+      <div className='min-h-screen flex items-center justify-center '>
+        <div className='p-8 rounded-2xl shadow-xl text-center max-w-md mx-4'>
           <div className='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4'>
             <svg className='w-8 h-8 text-blue-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
               <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' />
@@ -87,7 +87,7 @@ const Cart = () => {
         <div className="flex flex-wrap gap-8 max-w-7xl mx-auto">
           {/* Cart Items */}
           <div className='flex-1 min-w-0'>
-            <div className='bg-white rounded-2xl shadow-xl overflow-hidden'>
+            <div className=' rounded-2xl shadow-xl overflow-hidden'>
               <div className='bg-gradient-to-r from-blue-600 to-purple-600 p-6'>
                 <h2 className='text-2xl font-bold text-white flex items-center'>
                   <svg className='w-6 h-6 mr-2' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
