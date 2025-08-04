@@ -122,7 +122,7 @@ const ProductDetails = () => {
 
     return (
         <section className="min-h-screen">
-            <div className="container px-5 py-24 mx-auto">
+            <div className="container py-24 mx-auto">
                 <div className="max-w-7xl mx-auto">
 
                     {/* Breadcrumb */}
@@ -141,7 +141,7 @@ const ProductDetails = () => {
                             <div className="lg:w-1/2 w-full p-8">
                                 <div className="relative">
                                     {/* Main Image */}
-                                    <div className="relative bg-gray-50 rounded-2xl overflow-hidden mb-6 group">
+                                    <div className="relative rounded-2xl overflow-hidden mb-6 group">
                                         {!imageLoaded && (
                                             <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse"></div>
                                         )}
@@ -161,7 +161,7 @@ const ProductDetails = () => {
                                         {product.images.map((url, index) => (
                                             <div
                                                 key={index}
-                                                className={`w-20 h-20 rounded-xl overflow-hidden cursor-pointer transition-all duration-200 ${selectedImage === index ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-md'
+                                                className={`w-20 h-20 border rounded-xl overflow-hidden cursor-pointer transition-all duration-200 ${selectedImage === index ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-md'
                                                     }`}
                                                 onClick={() => setSelectedImage(url)}
                                             >
@@ -235,14 +235,14 @@ const ProductDetails = () => {
                                             <span className="font-medium">Quantity:</span>
                                             <div className="flex items-center border rounded-lg">
                                                 <button
-                                                    className="px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                                                    className="px-4 py-2 transition-colors"
                                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                                 >
                                                     -
                                                 </button>
                                                 <span className="px-4 py-2 font-medium">{quantity}</span>
                                                 <button
-                                                    className="px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                                                    className="px-4 py-2  transition-colors"
                                                     onClick={() => setQuantity(quantity + 1)}
                                                 >
                                                     +
