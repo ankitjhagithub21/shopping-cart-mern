@@ -126,15 +126,15 @@ const ProductDetails = () => {
                 <div className="max-w-7xl mx-auto">
 
                     {/* Breadcrumb */}
-                    <nav className="flex mb-8 text-sm">
+                    <nav className="flex p-4 text-sm">
                         <Link to="/" className="transition-colors">Home</Link>
                         <span className="mx-2">/</span>
                         <a href="#" className=" transition-colors capitalize">{product.category}</a>
                         <span className="mx-2">/</span>
-                        <span className=" font-medium">{product.title}</span>
+                        <span className=" font-medium">{product.title.slice(0,20)}</span>
                     </nav>
 
-                    <div className="rounded-3xl shadow-2xl overflow-hidden">
+                    <div className="rounded-3xl overflow-hidden">
                         <div className="flex flex-wrap">
 
                             {/* Product Image Section */}
@@ -177,7 +177,7 @@ const ProductDetails = () => {
                             </div>
 
                             {/* Product Details Section */}
-                            <div className="lg:w-1/2 w-full p-8 lg:pl-16">
+                            <div className="lg:w-1/2 w-full lg:p-8 p-4 lg:pl-16">
                                 <div className="space-y-6">
 
                                     {/* Category */}
@@ -194,7 +194,7 @@ const ProductDetails = () => {
                                     </div>
 
                                     {/* Title */}
-                                    <h1 className="text-4xl font-bold leading-tight">
+                                    <h1 className="lg:text-4xl text-2xl font-bold leading-tight">
                                         {product.title}
                                     </h1>
 
@@ -209,7 +209,7 @@ const ProductDetails = () => {
                                     </div>
 
                                     {/* Price */}
-                                    <div className="flex items-center space-x-4">
+                                    <div className="flex items-center flex-wrap  gap-4">
                                         <span className="text-4xl font-bold text-green-600">
                                             ${product.price}
                                         </span>
@@ -286,7 +286,7 @@ const ProductDetails = () => {
                                     </div>
 
                                     {/* Features */}
-                                    <div className="grid grid-cols-2 gap-4">
+                                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                                         <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-xl">
                                             <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
